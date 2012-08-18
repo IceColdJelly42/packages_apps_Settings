@@ -39,6 +39,14 @@
             android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
 
         <PreferenceScreen
+             android:key="screen_security"
+             android:fragment="com.android.settings.SecuritySettings"
+             android:title="@string/screen_security_category"
+             android:summary="@string/screen_security_summary">
+             <extra android:name="cm_security" android:value="true" />
+         </PreferenceScreen>
+
+        <PreferenceScreen
             android:fragment="com.android.settings.OwnerInfoSettings"
             android:key="owner_info_settings"
             android:title="@string/owner_info_settings_title"
