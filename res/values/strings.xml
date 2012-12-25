@@ -1809,23 +1809,27 @@
     <string name="dialog_title_font_size">Font size</string>
 
     <!-- Hardware keys remap -->
-     <string name="hardware_keys_title">Hardware keys</string>
-     <string name="hardware_keys_bindings_title">Key bindings</string>
-     <string name="hardware_keys_enable_custom_title">Enable custom bindings</string>
-     <string name="hardware_keys_home_long_press_title">Home long press action</string>
-     <string name="hardware_keys_menu_press_title">Menu key action</string>
-     <string name="hardware_keys_menu_long_press_title">Menu long press action</string>
-     <string name="hardware_keys_assist_press_title">Search key action</string>
-     <string name="hardware_keys_assist_long_press_title">Search long press action</string>
-     <string name="hardware_keys_app_switch_press_title">App-switch key action</string>
-     <string name="hardware_keys_app_switch_long_press_title">App-switch long press action</string>
-     <string name="hardware_keys_action_nothing">No action</string>
-     <string name="hardware_keys_action_menu">Open/close menu</string>
-     <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
-     <string name="hardware_keys_action_search">Search assistant</string>
-     <string name="hardware_keys_action_voice_search">Voice search</string>
-     <string name="hardware_keys_action_in_app_search">In-app search</string>
+    <string name="hardware_keys_title">Hardware keys</string>
+    <string name="hardware_keys_bindings_title">Key bindings</string>
+    <string name="hardware_keys_enable_custom_title">Enable custom bindings</string>
+    <string name="hardware_keys_home_long_press_title">Home long press action</string>
+    <string name="hardware_keys_menu_press_title">Menu key action</string>
+    <string name="hardware_keys_menu_long_press_title">Menu long press action</string>
+    <string name="hardware_keys_assist_press_title">Search key action</string>
+    <string name="hardware_keys_assist_long_press_title">Search long press action</string>
+    <string name="hardware_keys_app_switch_press_title">App-switch key action</string>
+    <string name="hardware_keys_app_switch_long_press_title">App-switch long press action</string>
+    <string name="hardware_keys_action_nothing">No action</string>
+    <string name="hardware_keys_action_menu">Open/close menu</string>
+    <string name="hardware_keys_action_app_switch">Recent apps switcher</string>
+    <string name="hardware_keys_action_search">Search assistant</string>
+    <string name="hardware_keys_action_voice_search">Voice search</string>
+    <string name="hardware_keys_action_in_app_search">In-app search</string>
     <string name="additional_options_title">Additional options</string>
+
+    <!-- BLN -->
+    <string name="title_use_bln">Use BLN</string>
+    <string name="summary_use_bln"><b>B</b>utton<b>L</b>ight<b>N</b>otification, turn on softkeys in new notification; slightly more power in standby</string>
 
     <!-- SIM lock settings title -->
     <string name="sim_lock_settings">SIM card lock settings</string>
