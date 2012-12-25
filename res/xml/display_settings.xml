@@ -63,4 +63,14 @@
                 android:title="@string/wifi_display_settings_title"
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
 
+        <PreferenceCategory
+        android:title="@string/additional_options_title">
+
+            <PreferenceScreen
+                android:key="hardware_keys"
+                android:fragment="com.android.settings.HardwareKeys"
+                android:title="@string/hardware_keys_title" />
+
+        </PreferenceCategory>
+
 </PreferenceScreen>
