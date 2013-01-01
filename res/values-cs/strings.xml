@@ -1896,4 +1896,6 @@
     <string name="increasing_ring_interval_3seconds">3 sekundy</string>
     <string name="increasing_ring_interval_5seconds">5 sekund</string>
     <string name="increasing_ring_interval_10seconds">10 sekund</string>
+    <string name="adb_notify">Upozornění na ladění USB</string>
+    <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
 </resources>
