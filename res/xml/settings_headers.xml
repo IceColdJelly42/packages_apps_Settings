@@ -80,6 +80,15 @@
                 android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
 
+    <header android:id="@+id/chronus"
+            android:title="@string/lock_clock_title"
+            android:icon="@drawable/ic_lock_clock" >
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.cyanogenmod.lockclock"
+                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+    </header>
+
     <header android:id="@+id/advanced_settings"
             android:title="@string/advanced_settings_title"
             android:icon="@drawable/ic_settings_advanced">

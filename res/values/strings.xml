@@ -4541,6 +4541,9 @@
     <string name="ll_bad_levels">Levels must be increasing</string>
     <string name="ll_num_levels">Set number of levels</string>
 
+    <!--- Lock clock -->
+    <string name="lock_clock_title">Lock clock widget</string>
+
     <!-- AOKP specific sound settings
     <string name="camera_sounds">Camera sounds</string> ** TODO ** -->
     <string name="safe_headset_volume_title">Safe headset volume</string>
