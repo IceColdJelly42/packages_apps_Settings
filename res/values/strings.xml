@@ -4544,7 +4544,7 @@
     <string name="ll_num_levels">Set number of levels</string>
 
     <!--- Lock clock -->
-    <string name="lock_clock_title">Chronus Clock settings</string>
+    <string name="lock_clock_title">Lock clock widget</string>
 
     <!-- AOKP specific sound settings
     <string name="camera_sounds">Camera sounds</string> ** TODO ** -->
