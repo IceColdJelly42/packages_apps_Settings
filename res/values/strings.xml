@@ -4502,6 +4502,8 @@
     <string name="end_time_title">End</string>
 
     <string name="vibration_title">Phone vibration</string>
+    <string name="notification_convert_sound_to_vibration_title">Notification conversion</string>
+    <string name="notification_convert_sound_to_vibration_summary">Sounds to vibrations during vibrate mode</string>
     <string name="link_volume_ringtones">Link volumes</string>
     <string name="link_volume_mutes">Link mute states</string>
     
