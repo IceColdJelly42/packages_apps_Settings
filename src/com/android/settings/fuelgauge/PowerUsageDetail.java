@@ -162,7 +162,7 @@ public class PowerUsageDetail extends Fragment implements Button.OnClickListener
     private void createDetails() {
         final Bundle args = getArguments();
         mTitle = args.getString(EXTRA_TITLE);
-        final String percentage = args.getString(EXTRA_PERCENT);
+        final int percentage = args.getInt(EXTRA_PERCENT, 1);
         final int gaugeValue = args.getInt(EXTRA_GAUGE, 1);
         mUsageSince = args.getInt(EXTRA_USAGE_SINCE, USAGE_SINCE_UNPLUGGED);
         mUid = args.getInt(EXTRA_UID, 0);
@@ -199,7 +199,7 @@ public class PowerUsageDetail extends Fragment implements Button.OnClickListener
         mTitleView.setText(mTitle);
 
         final TextView text1 = (TextView)mRootView.findViewById(android.R.id.text1);
-        text1.setText(getString(R.string.percentage_accurate, percentage));
+        text1.setText(getString(R.string.percentage, percentage));
 
         mTwoButtonsPanel = (ViewGroup)mRootView.findViewById(R.id.two_buttons_panel);
         mForceStopButton = (Button)mRootView.findViewById(R.id.left_button);

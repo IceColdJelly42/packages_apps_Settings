@@ -26,8 +26,6 @@ import android.widget.TextView;
 
 import com.android.settings.R;
 
-import java.text.DecimalFormat;
-
 /**
  * Custom preference for displaying power consumption as a bar and an icon on
  * the left for the subsystem/app type.
@@ -47,8 +45,7 @@ public class PowerGaugePreference extends Preference {
     public void setPercent(double percentOfMax, double percentOfTotal) {
         mProgress = (int) Math.ceil(percentOfMax);
         mProgressText = getContext().getResources().getString(
-                R.string.percentage_accurate,
-                new DecimalFormat("@#").format(percentOfTotal));
+                R.string.percentage, (int) Math.ceil(percentOfTotal));
         notifyChanged();
     }
 
