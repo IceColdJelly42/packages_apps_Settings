@@ -140,6 +140,9 @@
     <string name="bluetooth_phonebook_request">Solicitud de agenda telefónica</string>
     <string name="bluetooth_pb_acceptance_dialog_text">%1$s quiere acceder a tus contactos y a tu historial de llamadas. ¿Quieres permitir el acceso a %2$s?</string>
     <string name="bluetooth_pb_remember_choice">No volver a preguntar</string>
+    <string name="bluetooth_mas_request">Mensaje de solicitud de acceso</string>
+    <string name="bluetooth_mas_acceptance_dialog_text">%1$s quisiera tener acceso a sus mensajes. Dar acceso a los %2$s?</string>
+    <string name="bluetooth_mas_remember_choice">"No volver a preguntar"</string>
     <string name="date_and_time">Ajustes de fecha y hora</string>
     <string name="choose_timezone">Seleccionar zona horaria</string>
     <string name="normal_date_format">Regional (%s)</string>
@@ -374,6 +377,7 @@ Debes restablecer los datos de fábrica para volver a usar el teléfono. Cuando 
     <string name="bluetooth_incoming_pairing_msg">De:&lt;br>&lt;b>%1$s&lt;/b>&lt;br>&lt;br>¿Sincronizar con este dispositivo?</string>
     <string name="bluetooth_display_passkey_pin_msg">Para sincronizar con:&lt;br>&lt;b>%1$s&lt;/b>&lt;br>&lt;br>Escribe&lt;br>&lt;b>%2$s&lt;/b> en el dispositivo y, a continuación, pulsa la tecla Intro o de retorno.</string>
     <string name="bluetooth_pairing_accept">Sincronizar</string>
+
     <string name="bluetooth_pairing_decline">Cancelar</string>
     <string name="bluetooth_error_title" />
     <string name="bluetooth_pairing_error_message">No se ha podido sincronizar con %1$s.</string>
@@ -505,7 +509,6 @@ Solo tienes que unir los dispositivos (normalmente, por la parte trasera) y, a c
     <string name="wifi_more">Más</string>
     <string name="wifi_setup_wps">Configuración automática (WPS)</string>
     <string name="wifi_required_info_text">Necesitas conexión Wi-Fi para completar la configuración. Una vez finalizada, podrás alternar entre Wi-Fi y conexión de datos.</string>
-    <string name="wifi_auto_connect">Conectar Automáticamente</string>
     <string name="wifi_show_advanced">Mostrar opciones avanzadas</string>
     <string name="wifi_wps_setup_title">Configuración WPS</string>
     <string name="wifi_wps_setup_msg">Iniciando configuración WPS…</string>
@@ -564,6 +567,9 @@ La configuración del teléfono puede requerir una gran cantidad de actividad de
     <string name="wifi_setting_frequency_band_title">Banda de frecuencia WiFi</string>
     <string name="wifi_setting_frequency_band_summary">Especificar intervalo frecuencia de funcionamiento</string>
     <string name="wifi_setting_frequency_band_error">Error al establecer la banda de frecuencia</string>
+    <string name="wifi_setting_countrycode_title">Codigo Wi-Fi de región</string>
+    <string name="wifi_setting_countrycode_summary">Especifique el código de región para Wi-Fi</string>
+    <string name="wifi_setting_countrycode_error">Hubo un problema al configurar el código de región.</string>
     <string name="wifi_advanced_mac_address_title">Dirección MAC</string>
     <string name="wifi_advanced_ip_address_title">Dirección IP</string>
     <string name="wifi_advanced_settings_label">Ajustes de IP</string>
@@ -631,7 +637,7 @@ La configuración del teléfono puede requerir una gran cantidad de actividad de
     <string name="config_list_label">Redes configuradas</string>
     <string name="display_settings_title">Pantalla</string>
     <string name="sound_settings">Sonido</string>
-    <string name="ringtone_title">Tono de teléfono</string>
+    <string name="ringtone_title">Tono del teléfono</string>
     <string name="ringtone_summary" />
     <string name="all_volume_title">Volumen</string>
     <string name="musicfx_title">Efectos de música</string>
@@ -761,7 +767,7 @@ Es posible que el PIN no sea correcto."</string>
     <string name="device_info_not_available">No disponible</string>
     <string name="device_status_activity_title">Estado</string>
     <string name="device_status">Estado</string>
-    <string name="device_status_summary">Número de teléfono, señal, etc.</string>
+    <string name="device_status_summary">Estado de la batería y de la red y otra información</string>
     <string name="storage_settings">Almacenamiento</string>
     <string name="storage_settings_title">Ajustes de almacenamiento</string>
     <string name="storage_settings_summary">Desactivar tarjeta SD, ver almacenamiento disponible.</string>
@@ -968,7 +974,7 @@ Para eliminar la música, las imágenes y otros datos de usuario, deber borrar l
     <string name="lockpattern_change_lock_pattern_label">Cambiar patrón desbloqueo</string>
     <string name="lockpattern_change_lock_pin_label">Cambiar PIN de desbloqueo</string>
     <string name="lockpattern_need_to_unlock">Confirma el patrón guardado</string>
-    <string name="lockpattern_need_to_unlock_wrong">Inténtalo de nuevo</string>
+    <string name="lockpattern_need_to_unlock_wrong">Intentar nuevamente:</string>
     <string name="lockpattern_recording_intro_header">Crea un patrón de desbloqueo</string>
     <string name="lockpattern_recording_intro_footer">Pulsa la tecla de menú para obtener ayuda.</string>
     <string name="lockpattern_recording_inprogress">Levanta el dedo cuando termines</string>
@@ -1627,6 +1633,8 @@ un servicio de Google que te permite sincronizar datos para que puedas acceder a
     <string name="debug_layout_summary">Mostrar límites de vídeo, márgenes, etc.</string>
     <string name="show_cpu_usage">Mostrar uso de la CPU</string>
     <string name="show_cpu_usage_summary">Suporponer el uso de la CPU en la pantalla</string>
+    <string name="show_cpu_info">Mostrar Info CPU</string>
+    <string name="show_cpu_info_summary">Pantalla de superposición que muestra información actual de la CPU</string>
     <string name="force_hw_ui">Forzar aceleración GPU</string>
     <string name="force_hw_ui_summary">Forzar uso de GPU para dibujos en 2D</string>
     <string name="force_msaa">Forzar MSAA 4x</string>
@@ -1837,7 +1845,7 @@ Para ver un ejemplo de los datos que se presentaron, pulse en Vista previa."</st
     <string name="preview_version_title">Version</string>
     <string name="preview_country_title">Country</string>
     <string name="preview_carrier_title">Carrier</string>
-    <string name="quiet_hours_title">Horas de silencio</string>
+    <string name="quiet_hours_title">Horas de tranquilidad</string>
     <string name="quiet_hours_summary">Configurar las horas que el dispositivo debe estar en silencio</string>
     <string name="quiet_hours_enabled_title">Activar horas de silencio</string>
     <string name="quiet_hours_start">Inicio de las horas de silencio</string>
@@ -1853,6 +1861,8 @@ Para ver un ejemplo de los datos que se presentaron, pulse en Vista previa."</st
     <string name="start_time_title">Comienzo</string>
     <string name="end_time_title">Fin</string>
     <string name="vibration_title">Vibración</string>
+    <string name="notification_convert_sound_to_vibration_title">Notificación de conversión</string>
+    <string name="notification_convert_sound_to_vibration_summary">Suena para vibraciones durante el modo de vibración</string>
     <string name="link_volume_ringtones">Vincular Volumenes</string>
     <string name="link_volume_mutes">Vincular estados mudos</string>
     <string name="increasing_ring_title">Tono ascendiente</string>
@@ -1868,4 +1878,30 @@ A medida que el volumen de inicio se sitúa por encima del volumen del timbre, e
     <string name="increasing_ring_interval_3seconds">3 segs</string>
     <string name="increasing_ring_interval_5seconds">5 segs</string>
     <string name="increasing_ring_interval_10seconds">10 segs</string>
+    <string name="light_level_custom_title">Usar personalizado</string>
+    <string name="light_level_custom_summary">Utilice los niveles de iluminación personalizados para el brillo de la pantalla automático</string>
+    <string name="light_level_title">Niveles de brillo</string>
+    <string name="light_level_summary">Personalizar niveles de brillo</string>
+    <string name="ll_title">Niveles del sensor de brillo</string>
+    <string name="ll_header_upper">Alto</string>
+    <string name="ll_header_lower">Bajo</string>
+    <string name="ll_header_lcd">Pantalla</string>
+    <string name="ll_header_btn">Botones</string>
+    <string name="ll_lux">Sensor:</string>
+    <string name="ll_lcd">Pantalla:</string>
+    <string name="ll_btn">Botones:</string>
+    <string name="ll_disabled">desactivado</string>
+    <string name="ll_default">Valores por defecto</string>
+    <string name="ll_save">Guardar y aplicar</string>
+    <string name="ll_reload">Actualizar actual</string>
+    <string name="ll_bad_levels">Los niveles deben aumentar</string>
+    <string name="ll_num_levels">Establecer el número de niveles</string>
+    <string name="safe_headset_volume_title">Volumen seguro de los auriculares</string>
+    <string name="volume_adjust_sounds_enable_title">Ajuste volumen de sonido</string>
+    <string name="volume_adjust_sounds_enable_summary">Reproducir sonido al ajustar el volumen con teclas físicas</string>
+    <string name="device_hostname">Hostname del dispositivo</string>
+    <string name="volume_key_cursor_control_title">Controlar el cursor con el volumen</string>
+    <string name="volume_key_cursor_control_off">Desactivado</string>
+    <string name="volume_key_cursor_control_on">Volumen arriba/abajo mueve el cursor izquierda/derecha</string>
+    <string name="volume_key_cursor_control_on_reverse">Volumen arriba/abajo mueve el cursor derecha/izquierda</string>
 </resources>
