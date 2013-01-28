@@ -4576,4 +4576,7 @@
     <string name="volume_key_cursor_control_on">Volume up/down moves cursor left/right</string>
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
 
+    <!-- Launcher settings  -->
+    <string name="launcher_settings_title">Launcher</string>
+
 </resources>
