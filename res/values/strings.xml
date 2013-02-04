@@ -4474,6 +4474,9 @@
     <string name="mod_version">AOKP version</string>
     <string name="mod_version_default">Unknown</string>
 
+    <string name="icj_version">IceColdJelly version</string>
+    <string name="icj_version_default">Unknown</string>
+
     <!-- Anonymous Statistics #CM -->
     <!-- About device screen, list item title. Takes the user to the screen about opting in or out of anonymous statistics. -->
     <string name="anonymous_statistics_title">AOKP Statistics</string>

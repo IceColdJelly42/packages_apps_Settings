@@ -68,6 +68,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
     private static final String KEY_MOD_VERSION = "mod_version";
+    private static final String KEY_ICJ_VERSION = "icj_version";
 
     private static final String KEY_DEVICE_CHIPSET = "device_chipset";
     private static final String KEY_DEVICE_CPU = "device_cpu";
@@ -98,6 +99,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
         setValueSummary(KEY_MOD_VERSION, "ro.aokp.version");
         findPreference(KEY_MOD_VERSION).setEnabled(true);
+        setValueSummary(KEY_ICJ_VERSION, "ro.icj.version");
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
