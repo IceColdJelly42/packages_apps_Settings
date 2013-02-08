@@ -4473,7 +4473,13 @@
     <string name="mod_version">AOKP version</string>
     <string name="mod_version_default">Unknown</string>
 
+    <string name="icj_info">IceColdJelly info</string>
     <string name="icj_version">IceColdJelly version</string>
+    <string name="icj_dev">Lead developer</string>
+    <string name="icj_kernel">Kernel developer</string>
+    <string name="icj_themer">Main themer</string>
+    <string name="icj_maintester">Main tester</string>
+    <string name="icj_tester">Tester and helper</string>
     <string name="icj_version_default">Unknown</string>
 
     <!-- Anonymous Statistics #CM -->

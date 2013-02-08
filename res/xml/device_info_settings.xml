@@ -180,10 +180,45 @@
                 android:summary="@string/mod_version_default" />
 
         <!-- Icj version -->
-        <Preference android:key="icj_version"
+        <PreferenceScreen
+            android:key="icj_info"
+            android:title="@string/icj_info">
+            <!-- ROM version -->
+            <Preference android:key="icj_version"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/icj_version"
-                android:summary="@string/icj_version_default" />
+                android:summary="@string/icj_version_default"/>
+
+            <!-- Lead developer -->
+            <Preference android:key="icj_dev"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/icj_dev"
+                android:summary="@string/icj_version_default"/>
+
+            <!-- Kernel dev -->
+            <Preference android:key="icj_kernel"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/icj_kernel"
+                android:summary="@string/icj_version_default"/>
+
+            <!-- Themer -->
+            <Preference android:key="icj_themer"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/icj_themer"
+                android:summary="@string/icj_version_default"/>
+
+            <!-- Main tester -->
+            <Preference android:key="icj_maintester"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/icj_maintester"
+                android:summary="@string/icj_version_default"/>
+
+            <!-- Second tester -->
+            <Preference android:key="icj_tester"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/icj_tester"
+                android:summary="@string/icj_version_default"/>
+        </PreferenceScreen>        
 
         <!-- Detailed build version -->
         <Preference android:key="build_number" 

@@ -68,7 +68,14 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
     private static final String KEY_MOD_VERSION = "mod_version";
+
+    // ICJ ROM info
     private static final String KEY_ICJ_VERSION = "icj_version";
+    private static final String KEY_ICJ_DEV = "icj_dev";
+    private static final String KEY_ICJ_KERNEL = "icj_kernel";
+    private static final String KEY_ICJ_THEMER = "icj_themer";
+    private static final String KEY_ICJ_MAINTESTER = "icj_maintester";
+    private static final String KEY_ICJ_TESTER = "icj_tester";
 
     private static final String KEY_DEVICE_CHIPSET = "device_chipset";
     private static final String KEY_DEVICE_CPU = "device_cpu";
@@ -99,7 +106,14 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
         setValueSummary(KEY_MOD_VERSION, "ro.aokp.version");
         findPreference(KEY_MOD_VERSION).setEnabled(true);
+
+        // ICJ rom info
         setValueSummary(KEY_ICJ_VERSION, "ro.icj.version");
+        setValueSummary(KEY_ICJ_DEV, "ro.icj.dev");
+        setValueSummary(KEY_ICJ_KERNEL, "ro.icj.kernel");
+        setValueSummary(KEY_ICJ_THEMER, "ro.icj.themer");
+        setValueSummary(KEY_ICJ_MAINTESTER, "ro.icj.maintester");
+        setValueSummary(KEY_ICJ_TESTER, "ro.icj.tester");
 
         if (!SELinux.isSELinuxEnabled()) {
             String status = getResources().getString(R.string.selinux_status_disabled);
