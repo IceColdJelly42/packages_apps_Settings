@@ -1,0 +1,10 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <header
+        android:id="@+id/about"
+        android:fragment="com.android.settings.fragments.About"
+        android:title="@string/about_icj"
+        android:icon="@drawable/ic_rom_control_about"
+        android:summary="@string/about_aokp_summary" />
+
+</preference-headers>
