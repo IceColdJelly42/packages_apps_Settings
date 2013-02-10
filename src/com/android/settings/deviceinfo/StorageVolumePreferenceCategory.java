@@ -145,7 +145,7 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory {
         }
 
         final List<UserInfo> otherUsers = getUsersExcluding(currentUser);
-        final boolean showUsers = isSdcardSubmount(mVolume) && otherUsers.size() > 0;
+        final boolean showUsers = mVolume == null && otherUsers.size() > 0;
 
         mUsageBarPreference = new UsageBarPreference(context);
         mUsageBarPreference.setOrder(ORDER_USAGE_BAR);
@@ -165,33 +165,25 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory {
 
         mItemCache.setKey(KEY_CACHE);
 
-        final boolean showDetails = true; /* we show details for both internal and external storage */
+        final boolean showDetails = mVolume == null || mVolume.isPrimary();
         if (showDetails) {
             if (showUsers) {
                 addPreference(new PreferenceHeader(context, currentUser.name));
             }
 
-            if(isSdcardSubmount(mVolume)) {
-                addPreference(mItemApps);
-                addPreference(mItemDcim);
-                addPreference(mItemMusic);
-                addPreference(mItemDownloads);
-                addPreference(mItemCache);
-                addPreference(mItemMisc);
-            } else {
-                /* HOX UI Hack: Only show Apps and Cache for internal storage
-                ** all other items would vanish after the calculation finished, so there
-                ** is no reason to display them in the first place */
-                addPreference(mItemApps);
-                addPreference(mItemCache);
-            }
-            
+            addPreference(mItemApps);
+            addPreference(mItemDcim);
+            addPreference(mItemMusic);
+            addPreference(mItemDownloads);
+            addPreference(mItemCache);
+            addPreference(mItemMisc);
+
             if (showUsers) {
                 addPreference(new PreferenceHeader(context, R.string.storage_other_users));
 
                 int count = 0;
                 for (UserInfo info : otherUsers) {
-                    final int colorRes = count++ % 2 != 0 ? R.color.memory_user_light
+                    final int colorRes = count++ % 2 == 0 ? R.color.memory_user_light
                             : R.color.memory_user_dark;
                     final StorageItemPreference userPref = new StorageItemPreference(
                             getContext(), info.name, colorRes, info.id);
@@ -234,13 +226,6 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory {
         } catch (RemoteException e) {
         }
     }
-    
-    /* Returns true if this is the fake mountpoint of us */
-    private boolean isSdcardSubmount(StorageVolume v) {
-        if(v != null && v.getPath().equals("/storage/emulated/0"))
-            return true;
-        return false;
-    }
 
     public StorageVolume getStorageVolume() {
         return mVolume;
@@ -249,12 +234,7 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory {
     private void updatePreferencesFromState() {
         // Only update for physical volumes
         if (mVolume == null) return;
-        
-        if(isSdcardSubmount(mVolume)) {
-            setTitle(R.string.sd_memory);
-            return;
-        }
-        
+
         mMountTogglePreference.setEnabled(true);
 
         final String state = mStorageManager.getVolumeState(mVolume.getPath());
