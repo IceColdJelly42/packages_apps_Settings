@@ -1574,7 +1574,7 @@
         </activity>
 
         <!-- extra activities start -->
-        <activity android:name=".LockscreenButtons" />
+        <activity android:name=".rb.DensityChanger" />
 
         <!-- CyanogenMod activities Start -->
         <activity android:name=".profiles.ProfilesSettings" />
