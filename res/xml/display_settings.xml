@@ -85,6 +85,13 @@
         <PreferenceCategory
         android:title="@string/additional_options_title">
 
+    <!-- Hybrid -->
+    <PreferenceScreen
+        android:id="@+id/hybrid_settings"
+        android:title="@string/hybrid_settings_title"
+        android:icon="@drawable/ic_carbon_jellybeer"
+        android:fragment="com.android.settings.carbon.HybridSettings" />
+
             <PreferenceScreen
                 android:key="hardware_keys"
                 android:fragment="com.android.settings.HardwareKeys"
