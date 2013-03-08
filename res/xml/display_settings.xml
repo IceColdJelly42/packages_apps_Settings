@@ -88,7 +88,14 @@
             <PreferenceScreen
                 android:key="hardware_keys"
                 android:fragment="com.android.settings.HardwareKeys"
-                android:title="@string/hardware_keys_title" />
+                android:title="@string/hardware_keys_title"
+                android:summary="@string/hardware_keys_summary" />
+
+            <PreferenceScreen
+                android:fragment="com.android.settings.LockscreenButtons"
+                android:key="lockscreen_buttons"
+                android:title="@string/lockscreen_buttons_title"
+                android:summary="@string/lockscreen_buttons_summary" />
 
         </PreferenceCategory>
 

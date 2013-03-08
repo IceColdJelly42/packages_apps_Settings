@@ -1571,6 +1571,9 @@
                 android:resource="@id/sound_settings" />
         </activity>
 
+        <!-- extra activities start -->
+        <activity android:name=".LockscreenButtons" />
+
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
                 android:exported="true"
