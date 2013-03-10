@@ -1845,7 +1845,16 @@
     <string name="hardware_keys_action_search">Search assistant</string>
     <string name="hardware_keys_action_voice_search">Voice search</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
+    <string name="hardware_keys_action_last_app">Switch to last app</string>
+    <string name="hardware_keys_action_power">Power button</string>
+    <string name="hardware_keys_action_custom_app">Custom app</string>
     <string name="additional_options_title">HW buttons options</string>
+
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Use custom application</string>
+    <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
+    <string name="group_applications">Applications</string>
+    <string name="select_custom_app_title">Select custom application</string>
 
     <!-- Lock screen buttons -->
     <string name="lockscreen_buttons_title">Lockscreen Button actions</string>
