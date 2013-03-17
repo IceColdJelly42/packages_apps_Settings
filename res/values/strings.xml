@@ -1858,6 +1858,7 @@
     <string name="hardware_keys_action_in_app_search">In-app search</string>
     <string name="hardware_keys_action_power">Power off</string>
     <string name="hardware_keys_action_notifications">Notification shade toggle</string>
+    <string name="hardware_keys_action_expanded">Expanded desktop toggle</string> 
     <string name="hardware_keys_action_kill_app">Kill app</string>
     <string name="hardware_keys_action_last_app">Switch to last app</string>
     <string name="hardware_keys_action_custom_app">Custom app</string>
