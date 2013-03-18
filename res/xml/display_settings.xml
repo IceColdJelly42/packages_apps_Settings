@@ -83,23 +83,6 @@
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
 
         <PreferenceCategory
-        android:title="@string/additional_options_title">
-
-            <PreferenceScreen
-                android:key="hardware_keys"
-                android:fragment="com.android.settings.HardwareKeys"
-                android:title="@string/hardware_keys_title"
-                android:summary="@string/hardware_keys_summary" />
-
-            <PreferenceScreen
-                android:fragment="com.android.settings.LockscreenButtons"
-                android:key="lockscreen_buttons"
-                android:title="@string/lockscreen_buttons_title"
-                android:summary="@string/lockscreen_buttons_summary" />
-
-        </PreferenceCategory>
-
-        <PreferenceCategory
         android:key="xposed_options"
         android:title="@string/xposed_category_title" >
 

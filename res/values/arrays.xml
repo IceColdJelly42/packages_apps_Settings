@@ -812,57 +812,6 @@
         <item>Always allow</item>
     </string-array>
 
-    <!-- HW keys remap -->
-    <string-array name="hardware_keys_action_entries">
-        <item>@string/hardware_keys_action_nothing</item>
-        <item>@string/hardware_keys_action_home</item>
-        <item>@string/hardware_keys_action_back</item>
-        <item>@string/hardware_keys_action_menu</item>
-        <item>@string/hardware_keys_action_app_switch</item>
-        <item>@string/hardware_keys_action_search</item>
-        <item>@string/hardware_keys_action_voice_search</item>
-        <item>@string/hardware_keys_action_in_app_search</item>
-        <item>@string/hardware_keys_action_power</item>
-        <item>@string/hardware_keys_action_notifications</item>
-        <item>@string/hardware_keys_action_expanded</item> 
-        <item>@string/hardware_keys_action_kill_app</item>
-        <item>@string/hardware_keys_action_last_app</item>
-        <item>@string/hardware_keys_action_custom_app</item>
-    </string-array>
-
-    <string-array name="hardware_keys_action_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-    </string-array>
-
-    <string-array name="lockscreen_long_key_press_entries">
-        <item>@string/lockscreen_buttons_no_action</item>
-        <item>@string/lockscreen_buttons_next</item>
-        <item>@string/lockscreen_buttons_previous</item>
-        <item>@string/lockscreen_buttons_playpause</item>
-        <item>@string/lockscreen_buttons_toggle_sound</item>
-    </string-array>
-
-    <string-array name="lockscreen_long_key_press_values" translatable="false">
-        <item></item>
-        <item>NEXT</item>
-        <item>PREVIOUS</item>
-        <item>PLAYPAUSE</item>
-        <item>SOUND</item>
-    </string-array>
-
     <string-array name="increasing_ring_interval_entries" translatable="false">
         <item>@string/increasing_ring_interval_eachring</item>
         <item>@string/increasing_ring_interval_half_second</item>
