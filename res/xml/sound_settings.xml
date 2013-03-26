@@ -129,7 +129,13 @@
             android:key="swap_volume_buttons"
             android:title="@string/swap_volume_buttons_title"
             android:summary="@string/swap_volume_buttons_summary"
-            android:dependency="accelerometer" /> 
+            android:dependency="accelerometer" />
+
+    <CheckBoxPreference
+            android:key="lock_volume_keys"
+            android:title="@string/sound_lock_volume_keys_title"
+            android:summary="@string/sound_lock_volume_keys_summary"
+            android:persistent="false" />
 
     <ListPreference
             android:key="emergency_tone"
