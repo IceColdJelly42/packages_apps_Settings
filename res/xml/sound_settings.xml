@@ -128,8 +128,7 @@
     <CheckBoxPreference
             android:key="swap_volume_buttons"
             android:title="@string/swap_volume_buttons_title"
-            android:summary="@string/swap_volume_buttons_summary"
-            android:dependency="accelerometer" />
+            android:summary="@string/swap_volume_buttons_summary" />
 
     <CheckBoxPreference
             android:key="lock_volume_keys"
