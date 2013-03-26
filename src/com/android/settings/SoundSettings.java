@@ -91,6 +91,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_CONVERT_SOUND_TO_VIBRATE = "notification_convert_sound_to_vibration";
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
+    private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons"; 
 
     private static final String[] NEED_VOICE_CAPABILITY = {
             KEY_RINGTONE, KEY_DTMF_TONE, KEY_CATEGORY_CALLS,
@@ -118,6 +119,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private PreferenceScreen mQuietHours;
     private CheckBoxPreference mSafeHeadsetVolume;
     private CheckBoxPreference mVolumeAdjustSounds;
+    private CheckBoxPreference mSwapVolumeButtons; 
 
     private Runnable mRingtoneLookupRunnable;
 
@@ -243,6 +245,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         mSafeHeadsetVolume.setPersistent(false);
         mSafeHeadsetVolume.setChecked(Settings.System.getBoolean(resolver,
                 Settings.System.MANUAL_SAFE_MEDIA_VOLUME, true));
+
+        mSwapVolumeButtons = (CheckBoxPreference) findPreference(KEY_SWAP_VOLUME_BUTTONS);
+        int swapVolumeKeys = Settings.System.getInt(resolver,
+                Settings.System.SWAP_VOLUME_KEYS_BY_ROTATE, 0);
+        mSwapVolumeButtons.setChecked(swapVolumeKeys != 0);
 
         Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         if (vibrator == null || !vibrator.hasVibrator()) {
@@ -471,6 +478,9 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mHeadsetConnectPlayer) {
             Settings.System.putInt(getContentResolver(), Settings.System.HEADSET_CONNECT_PLAYER,
                     mHeadsetConnectPlayer.isChecked() ? 1 : 0);
+        } else if (preference == mSwapVolumeButtons) {
+            Settings.System.putInt(getContentResolver(), Settings.System.SWAP_VOLUME_KEYS_BY_ROTATE,
+                    mSwapVolumeButtons.isChecked() ? 1 : 0); 
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
