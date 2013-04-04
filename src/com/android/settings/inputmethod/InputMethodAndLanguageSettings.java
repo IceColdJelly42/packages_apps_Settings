@@ -194,10 +194,8 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         }
 
         mDisableFullscreenKeyboard = (CheckBoxPreference) findPreference(PREF_DISABLE_FULLSCREEN_KEYBOARD);
-        if (mDisableFullscreenKeyboard != null) {
-            mDisableFullscreenKeyboard.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                   Settings.System.DISABLE_FULLSCREEN_KEYBOARD, 0) == 1);
-        }
+        mDisableFullscreenKeyboard.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.DISABLE_FULLSCREEN_KEYBOARD, 0) == 1);
 
         mVolumeKeyCursorControl = (ListPreference) findPreference(VOLUME_KEY_CURSOR_CONTROL);
         if(mVolumeKeyCursorControl != null) {
@@ -390,7 +388,7 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         } else if (preference instanceof CheckBoxPreference) {
 
             final CheckBoxPreference chkPref = (CheckBoxPreference) preference;
-            if (mDisableFullscreenKeyboard != null && chkPref == mDisableFullscreenKeyboard) {
+            if (chkPref == mDisableFullscreenKeyboard) {
                 boolean checked = ((CheckBoxPreference) preference).isChecked();
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.DISABLE_FULLSCREEN_KEYBOARD, checked ? 1 : 0);
