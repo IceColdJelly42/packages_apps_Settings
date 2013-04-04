@@ -64,4 +64,5 @@
 
     <!-- Notification Shortcuts -->
     <dimen name="notification_shortcut_picker_left_padding">36dip</dimen>
+    <dimen name="shortcut_picker_left_padding">70dip</dimen>
 </resources>
