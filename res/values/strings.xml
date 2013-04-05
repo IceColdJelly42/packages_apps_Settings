@@ -4855,7 +4855,7 @@
     <string name="follow_through_title">Follow through!</string>
     <string name="follow_through_summary">Make sure you follow the steps one-by-one and complete each one before proceeding to the next.</string>
     <string name="stock_density_title">1. Change LCD Density to stock value</string>
-    <string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. Galaxy S3 uses 320 by default.</string>
+    <string name="stock_density_summary">Tablets and older phones use 160. Most phones use 240. OneX uses 320 by default.</string>
     <string name="stock_density_changed_summary">"Density set to: "</string>
     <string name="reboot_title">2. Reboot!</string>
     <string name="reboot_summary">Come back here after the reboot and complete the rest of the steps!</string>
