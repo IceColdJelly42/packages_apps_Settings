@@ -109,6 +109,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
 
         // ICJ rom info
         setValueSummary(KEY_ICJ_VERSION, "ro.icj.version");
+        findPreference(KEY_ICJ_VERSION).setEnabled(true);
         setValueSummary(KEY_ICJ_DEV, "ro.icj.dev");
         setValueSummary(KEY_ICJ_KERNEL, "ro.icj.kernel");
         setValueSummary(KEY_ICJ_THEMER, "ro.icj.themer");
@@ -223,6 +224,19 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
                 Intent intent = new Intent(Intent.ACTION_MAIN);
                 intent.setClassName("android",
                         com.android.internal.app.AOKPLogoActivity.class.getName());
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e(LOG_TAG, "Unable to start activity " + intent.toString());
+                }
+            }
+       } else if (preference.getKey().equals(KEY_ICJ_VERSION)) {
+            System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
+            mHits[mHits.length-1] = SystemClock.uptimeMillis();
+            if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setClassName("com.android.settings",
+                        com.android.settings.icj.PlatLogoActivity.class.getName());
                 try {
                     startActivity(intent);
                 } catch (Exception e) {
