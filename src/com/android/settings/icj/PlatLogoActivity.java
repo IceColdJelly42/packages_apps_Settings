@@ -70,7 +70,7 @@ public class PlatLogoActivity extends Activity {
         mZzz = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         mContent = new ImageView(this);
-        mContent.setImageResource(com.android.internal.R.drawable.platlogo);
+        mContent.setImageResource(com.android.settings.R.drawable.platlogo_icj);
         mContent.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 
         mContent.setOnTouchListener(new View.OnTouchListener() {
