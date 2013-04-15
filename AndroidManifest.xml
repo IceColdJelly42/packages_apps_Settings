@@ -1578,6 +1578,7 @@
 
         <!-- extra activities start -->
         <activity android:name=".rb.DensityChanger" />
+        <activity android:name=".cyanogenmod.PowerWidget" />
 
         <!-- Profiles -->
         <activity android:name=".profiles.ProfilesSettings" />
