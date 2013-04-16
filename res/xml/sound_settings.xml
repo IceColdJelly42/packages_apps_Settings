@@ -189,7 +189,7 @@
     <CheckBoxPreference
             android:key="power_notifications_vibrate"
             android:title="@string/power_notifications_vibrate_title"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:dependency="power_notifications"
             android:persistent="false" />
 
