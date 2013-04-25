@@ -4991,4 +4991,6 @@
     <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
     <string name="media_scanner_on_boot_disabled">Do not scan media</string>
 
+    <!-- Permissions Management -->
+    <string name="permissions_settings_title">Permissions</string>
 </resources>
