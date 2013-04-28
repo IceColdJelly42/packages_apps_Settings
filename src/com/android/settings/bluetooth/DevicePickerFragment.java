@@ -65,6 +65,7 @@ public final class DevicePickerFragment extends DeviceListPreferenceFragment {
 
 //modify by huaqin -- start
     public void onPause() {
+        super.onPause();
 	if(mLocalAdapter.isDiscovering()){
 	   is_searching = true;
 	}else{
