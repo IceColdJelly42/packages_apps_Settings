@@ -1830,6 +1830,7 @@
     <string name="user_picture_title" msgid="7297782792000291692">"ID fotografie"</string>
     <string name="cell_broadcast_settings" msgid="8415582011920085222">"Hromadné zasílání zpráv v rámci buňky"</string>
     <string name="cell_broadcast_settings_summary" msgid="3301339398950905913">"Vyberte typy mimořádných upozornění, která chcete zobrazovat."</string>
+    
     <string name="hardware_info">Informace o hardwaru</string>
     <string name="device_rear_camera">Zadní kamera</string>
     <string name="device_front_camera">Přední kamera</string>
@@ -1878,23 +1879,67 @@
     <string name="quiet_hours_active_to">do</string>
     <string name="start_time_title">Začátek</string>
     <string name="end_time_title">Konec</string>
+    <!-- Automatic brightness customization -->
+    <string name="light_sensor_current_value">Aktuální hodnota světelného senzoru: <xliff:g id="light_level">%d</xliff:g> lux</string>
+    <string name="auto_brightness_dialog_title">Úrovně automatického podsvícení</string>
+    <string name="auto_brightness_level_format"><xliff:g id="level">%1$d</xliff:g> lux</string>
+    <string name="auto_brightness_last_level_format"><xliff:g id="level">%1$d</xliff:g> -\n\u221e lux</string>
+    <string name="auto_brightness_brightness_format"><xliff:g id="percent">%s</xliff:g>%%</string>
+    <string name="auto_brightness_adjust_button">Upravit</string>
+    <string name="auto_brightness_close_button">Zavřít</string>
+    <string name="auto_brightness_reset_button">Obnovit</string>
+    <string name="auto_brightness_split_dialog_title">Rozdělit úroveň jasu</string>
+    <string name="auto_brightness_level_dialog_title">Nastavení úrovně osvětlení</string>
+    <string name="auto_brightness_lux">Okolní jas (lux)</string>
+    <string name="auto_brightness_backlight">Jas obrazovky (%)</string>
+    <string name="auto_brightness_reset_dialog_title">Obnovit úrovně?</string>
+    <string name="auto_brightness_reset_confirmation">Všechny úrovně jasu budou obnoveny na výchozí hodnoty.</string>
+    <string name="auto_brightness_split_lux_format">Rozdělit pozici (mezi <xliff:g id="min">%1$d</xliff:g> a <xliff:g id="max">%2$d</xliff:g> lux)</string>
+    <string name="auto_brightness_level_options">Možnosti úrovní podsvícení</string>
+    <string name="auto_brightness_menu_edit_lux">Okolní rozsah jasu</string>
+    <string name="auto_brightness_menu_split">Rozdělit</string>
+    <string name="auto_brightness_menu_remove">Odstranit</string>
+    <string name="auto_brightness_preview">Náhled</string>
+    <string name="auto_brightness_preview_dialog_title">Náhled křivky jasu</string>
+    <string name="auto_brightness_help_dialog_title">Nápověda</string>
+    <string name="auto_brightness_help_text"><b>Jak je jas počítán?</b>
+        \n\n
+        Křivka jasu je počítána <i>kubickou spline interpolací</i> na daném počtu <i>kontrolních bodů</i>.
+        Není to žádný statický výpočet, kde jas obrazovky zůstává konstantní pro daný rozsah okolního osvětlení.
+        Při tomto výpočtu nezpůsobí malé změny okolního osvětlení velké skoky ve změně jasu obrazovky, nicméně
+        předvídat události pro změnu kontrolních bodů je trochu obtížné.\n
+        Pomocným nástrojem tohoto jevu je náhled vypočítané křivky. Je třeba si však uvědomit, že náhled zobrazuje
+        křivku <i>logaritmicky</i>, takže všechny kontrolní body jsou výraznější. Při použití lineárního měřítka,
+        by nebylo možné řádně zobrazit kontrolní body na spodní hranici okolního osvětlení.
+        \n\n
+        <b>Jak upravit křivku jasu?</b>
+        \n\n
+        Každý řádek seznamu odpovídá jednomu <i>kontrolnímu bodu</i> křivky jasu. Pro úpravu úrovně jasu daného bodu
+        je možné použít posuvník u každého řádku. Jas obrazovky se změní ihned při dotyk na posuvník pro poskytnutí reálného
+        náhledu úrovně jasu.\n
+        Další nastavení je přístupné po dlouhém stisku řádku. Stisknutím \'Upravit\' je možné editovat jak úrovně okolního
+        jasu pro kontrolní body, tak ručně vložit požadovaný jas obrazovky. Stisknutím \'Rozdělit\' je možné duplikovat
+        jeden řádek do dvou pro vložení dalších kontrolních bodů. \'Ostranit\' vymaže vybraný řádek.
+    </string>
     <string name="vibration_title">Vibrace telefonu</string>
     <string name="link_volume_ringtones">Spojit hlasitosti</string>
     <string name="link_volume_mutes">Spojit tiché režimy</string>
-    <string name="increasing_ring_title">Vzrůstající vyzvánění</string>
-    <string name="checkbox_increasing_ring">Zapnout</string>
-    <string name="increasing_ring_min_volume_title">Počáteční hlasitost vyzvánění</string>
-    <string name="increasing_ring_volume_notice">Upozornění:\nPokud je počáteční hlasitost nastavena na vyšší hodnotu než hlasitost normální, bude při vyzvýnění použita normální (nevzrůstající) hlasitost.</string>
-    <string name="increasing_ring_interval_title">Interval vzrůstání</string>
-    <string name="increasing_ring_interval_eachring">Při každém zazvonění</string>
-    <string name="increasing_ring_interval_half_second">0,5 sekundy</string>
-    <string name="increasing_ring_interval_1second">1 sekunda</string>
-    <string name="increasing_ring_interval_2seconds">2 sekundy</string>
-    <string name="increasing_ring_interval_3seconds">3 sekundy</string>
-    <string name="increasing_ring_interval_5seconds">5 sekund</string>
-    <string name="increasing_ring_interval_10seconds">10 sekund</string>
     <string name="adb_notify">Upozornění na ladění USB</string>
     <string name="adb_notify_summary">Zobrazit upozornění v notifikační liště při zapnutém ladění přes USB</string>
     <string name="safe_headset_volume_title">Bezpečná hlasitost sluchátek</string>
     <string name="device_hostname">Název zařízení</string>
+    <string name="app_security_title">Bezpečnost aplikací</string>
+    <string name="sms_security_check_limit_title">Limit počtu SMS</string>
+    <string name="sms_security_check_limit_summary">Zobrazit upozornění při častém odesílání SMS jinými aplikacemi. Aktuální limit: %d zpráv během 15 minut (vyžaduje restart)</string>
+    <string name="sms_security_check_limit_default">30 (výchozí)</string>
+    <string name="volume_adjust_sounds_enable_title">Zvuk při změně hlasitosti</string>
+    <string name="volume_adjust_sounds_enable_summary">Při změně hlasitosti hw tlačítky přehrát zvukové upozornění</string>
+    <string name="usb_mass_storage_title">Mass storage</string>
+    <string name="usb_mass_storage_summary">Zapnout USB mass storage</string>
+    <string name="lockscreen_quick_unlock_control_title">Rychlé odemčení pomocí PINu</string>
+    <string name="lockscreen_quick_unlock_control_summary">Odemknout zamčenou obrazovku pomocí hesla/pinu bez stisku tlačítka enter</string>
+    <string name="screensaver_settings_summary_wireless">Během bezdrátového nabíjení</string>
+    <string name="camera_sounds_title">Zvuk při focení</string>
+    <string name="camera_sounds_summary">POZOR: Vypnutí zvuku fotoaparátu je na některých místech nelegální!</string>
+    <string name="permissions_settings_title">Oprávnění</string>
 </resources>
