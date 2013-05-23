@@ -20,7 +20,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceDrawerActivity;
 import android.speech.tts.TextToSpeech.EngineInfo;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +58,7 @@ public class TtsEnginePreference extends Preference {
      * The preference activity that owns this preference. Required
      * for instantiating the engine specific settings screen.
      */
-    private final PreferenceActivity mPreferenceActivity;
+    private final PreferenceDrawerActivity mPreferenceDrawerActivity;
 
     /**
      * The engine information for the engine this preference represents.
@@ -90,12 +90,12 @@ public class TtsEnginePreference extends Preference {
         };
 
     public TtsEnginePreference(Context context, EngineInfo info, RadioButtonGroupState state,
-            PreferenceActivity prefActivity) {
+            PreferenceDrawerActivity prefActivity) {
         super(context);
         setLayoutResource(R.layout.preference_tts_engine);
 
         mSharedState = state;
-        mPreferenceActivity = prefActivity;
+        mPreferenceDrawerActivity = prefActivity;
         mEngineInfo = info;
         mPreventRadioButtonCallbacks = false;
 
@@ -151,10 +151,10 @@ public class TtsEnginePreference extends Preference {
                 }
 
                 // Note that we use this instead of the (easier to use)
-                // PreferenceActivity.startPreferenceFragment because the
+                // PreferenceDrawerActivity.startPreferenceFragment because the
                 // title will not be updated correctly in the fragment
                 // breadcrumb since it isn't inflated from the XML layout.
-                mPreferenceActivity.startPreferencePanel(
+                mPreferenceDrawerActivity.startPreferencePanel(
                         TtsEngineSettingsFragment.class.getName(),
                         args, 0, mEngineInfo.label, null, 0);
             }
