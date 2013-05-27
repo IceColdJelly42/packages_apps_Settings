@@ -104,7 +104,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment {
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
-        setValueSummary(KEY_MOD_VERSION, "ro.aokp.version");
+        setValueSummary(KEY_MOD_VERSION, "ro.icecold.version");
         findPreference(KEY_MOD_VERSION).setEnabled(true);
 
         // ICJ rom info
