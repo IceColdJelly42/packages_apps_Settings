@@ -27,7 +27,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceDrawerActivity;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings.Bookmarks;
@@ -49,7 +49,7 @@ import java.net.URISyntaxException;
  * Shows a list of possible shortcuts, the current application each is bound to,
  * and allows choosing a new bookmark for a shortcut.
  */
-public class QuickLaunchSettings extends PreferenceActivity implements
+public class QuickLaunchSettings extends PreferenceDrawerActivity implements
         AdapterView.OnItemLongClickListener, DialogInterface.OnClickListener {
 
     private static final String TAG = "QuickLaunchSettings";
