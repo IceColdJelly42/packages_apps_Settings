@@ -382,8 +382,8 @@ public class WifiSettings extends SettingsPreferenceFragment
             Switch actionBarSwitch = new Switch(activity);
 
             if (activity instanceof PreferenceDrawerActivity) {
-                PreferenceDrawerActivity preferenceDrawerActivity = (PreferenceDrawerActivity) activity;
-                if (preferenceDrawerActivity.onIsHidingHeaders() || !preferenceDrawerActivity.onIsMultiPane()) {
+                PreferenceDrawerActivity preferenceActivity = (PreferenceDrawerActivity) activity;
+                if (preferenceActivity.onIsHidingHeaders() || !preferenceActivity.onIsMultiPane()) {
                     final int padding = activity.getResources().getDimensionPixelSize(
                             R.dimen.action_bar_switch_padding);
                     actionBarSwitch.setPaddingRelative(0, 0, padding, 0);
