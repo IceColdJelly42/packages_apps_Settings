@@ -20,6 +20,7 @@ import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 
 import android.app.ActivityManagerNative;
 import android.app.Dialog;
+import android.app.INotificationManager; 
 import android.app.admin.DevicePolicyManager;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -63,6 +64,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WIFI_DISPLAY = "wifi_display";
     private static final String KEY_CUSTOM_LIGHT_LEVELS = "light_level_custom";
     private static final String KEY_AUTOMATIC_SENSITIVITY = "auto_brightness_sensitivity";
+
+    private static final String KEY_HALO_STATE = "halo_state";
+    private static final String KEY_HALO_HIDE = "halo_hide";
+    private static final String KEY_HALO_REVERSED = "halo_reversed";
         
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -73,6 +78,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mNotificationPulse;
     private CheckBoxPreference mCustomLightLevels;
     private ListPreference mAutomaticSensitivity;
+    private ListPreference mHaloState;
+    private CheckBoxPreference mHaloHide;
+    private CheckBoxPreference mHaloReversed;
+    private INotificationManager mNotificationManager;
         
     private final Configuration mCurConfig = new Configuration();
     
@@ -158,6 +167,21 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(mWifiDisplayPreference);
             mWifiDisplayPreference = null;
         }
+
+        mNotificationManager = INotificationManager.Stub.asInterface(
+                ServiceManager.getService(Context.NOTIFICATION_SERVICE));
+
+        mHaloState = (ListPreference) prefSet.findPreference(KEY_HALO_STATE);
+        mHaloState.setValue(String.valueOf((isHaloPolicyBlack() ? "1" : "0")));
+        mHaloState.setOnPreferenceChangeListener(this);
+
+        mHaloHide = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_HIDE);
+        mHaloHide.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HALO_HIDE, 0) == 1);
+
+        mHaloReversed = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_REVERSED);
+        mHaloReversed.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.HALO_REVERSED, 1) == 1);
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
@@ -347,6 +371,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
     }
 
+    private boolean isHaloPolicyBlack() {
+        try {
+            return mNotificationManager.isHaloPolicyBlack();
+        } catch (android.os.RemoteException ex) {
+                // System dead
+        }
+        return true;
+    }
+
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mAccelerometer) {
@@ -368,6 +401,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putLong(getContentResolver(),
                     Settings.System.LIGHTS_CHANGED, tag);
 
+        } else if (preference == mHaloHide) {  
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.HALO_HIDE, mHaloHide.isChecked()
+                    ? 1 : 0);  
+        } else if (preference == mHaloReversed) {  
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.HALO_REVERSED, mHaloReversed.isChecked()
+                     ? 1 : 0);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -430,6 +471,19 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } else {
                 mFontSizePref.click();
             }
+        }
+        return false;
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        } else if (preference == mHaloState) {
+            boolean state = Integer.valueOf((String) newValue) == 1;
+            try {
+                mNotificationManager.setHaloPolicyBlack(state);
+            } catch (android.os.RemoteException ex) {
+                // System dead
+            }
+            return true;
         }
         return false;
     }
