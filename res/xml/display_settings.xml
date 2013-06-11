@@ -123,6 +123,10 @@
                 android:summary="@string/screen_security_summary">
                 <extra android:name="cm_security" android:value="true" />
 
+         </PreferenceScreen>
+
+	</PreferenceCategory>
+
  <PreferenceCategory
         android:key="rb_halo"
         android:title="@string/halo_header">
@@ -148,9 +152,5 @@
          android:defaultValue="true" />
 
  </PreferenceCategory>
-
-         </PreferenceScreen>
-
-	</PreferenceCategory>
 
 </PreferenceScreen>
