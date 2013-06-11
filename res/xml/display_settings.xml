@@ -123,34 +123,15 @@
                 android:summary="@string/screen_security_summary">
                 <extra android:name="cm_security" android:value="true" />
 
+            <PreferenceScreen
+                android:key="halo"
+                android:icon="@drawable/ic_halo"
+                android:fragment="com.android.settings.paranoid.Halo"
+                android:title="@string/halo_settings_title"
+                android:summary="@string/halo_settings_summary" /> 
+
          </PreferenceScreen>
 
 	</PreferenceCategory>
-
- <PreferenceCategory
-        android:key="rb_halo"
-        android:title="@string/halo_header">
-
-     <ListPreference
-         android:key="halo_state"
-         android:dialogTitle="@string/halo_state_title"
-         android:title="@string/halo_state_title"
-         android:summary="@string/halo_state_summary"
-         android:entries="@array/entries_halo_state"
-         android:entryValues="@array/values_halo_state" />
-
-     <CheckBoxPreference
-         android:key="halo_hide"
-         android:title="@string/halo_hide_title"
-         android:summary="@string/halo_hide_summary"
-         android:defaultValue="false" />
-
-     <CheckBoxPreference
-         android:key="halo_reversed"
-         android:title="@string/halo_reversed_title"
-         android:summary="@string/halo_reversed_summary"
-         android:defaultValue="true" />
-
- </PreferenceCategory>
 
 </PreferenceScreen>
