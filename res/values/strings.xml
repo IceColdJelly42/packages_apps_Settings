@@ -5008,4 +5008,7 @@
 
     <!-- TRDS Settings -->
     <string name="trds_settings_title">Dark ICJ</string>
+
+    <!-- Delete apn confirmation dialog message -->
+    <string name="confirm_delete_apn">The APN will be deleted.</string>
 </resources>
