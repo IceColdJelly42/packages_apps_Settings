@@ -34,6 +34,7 @@ import android.hardware.display.WifiDisplay;
 import android.hardware.display.WifiDisplayStatus;
 import android.os.Bundle;
 import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -82,6 +83,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
     private INotificationManager mNotificationManager;
+    private Context mContext;
         
     private final Configuration mCurConfig = new Configuration();
     
@@ -103,6 +105,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ContentResolver resolver = getActivity().getContentResolver();
+        mContext = getActivity();
 
         addPreferencesFromResource(R.xml.display_settings);
 
@@ -169,17 +172,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
 
         mNotificationManager = INotificationManager.Stub.asInterface(
-                ServiceManager.getService(Context.NOTIFICATION_SERVICE));
+                ServiceManager.getService(mContext.NOTIFICATION_SERVICE));
 
-        mHaloState = (ListPreference) prefSet.findPreference(KEY_HALO_STATE);
+        mHaloState = (ListPreference) findPreference(KEY_HALO_STATE);
         mHaloState.setValue(String.valueOf((isHaloPolicyBlack() ? "1" : "0")));
         mHaloState.setOnPreferenceChangeListener(this);
 
-        mHaloHide = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_HIDE);
+        mHaloHide = (CheckBoxPreference) findPreference(KEY_HALO_HIDE);
         mHaloHide.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_HIDE, 0) == 1);
 
-        mHaloReversed = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_REVERSED);
+        mHaloReversed = (CheckBoxPreference) findPreference(KEY_HALO_REVERSED);
         mHaloReversed.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_REVERSED, 1) == 1);
     }
@@ -433,8 +436,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                         Settings.System.AUTO_BRIGHTNESS_RESPONSIVENESS, sensitivity);
 
             updateAutomaticSensityDescription(value);
+        } else if (preference == mHaloState) {
+            boolean state = Integer.valueOf((String) objValue) == 1;
+            try {
+                mNotificationManager.setHaloPolicyBlack(state);
+            } catch (android.os.RemoteException ex) {
+                // System dead
+            }
+            return true;
         }
-
         return true;
     }
 
@@ -471,19 +481,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } else {
                 mFontSizePref.click();
             }
-        }
-        return false;
-    }
-
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        } else if (preference == mHaloState) {
-            boolean state = Integer.valueOf((String) newValue) == 1;
-            try {
-                mNotificationManager.setHaloPolicyBlack(state);
-            } catch (android.os.RemoteException ex) {
-                // System dead
-            }
-            return true;
         }
         return false;
     }
