@@ -94,6 +94,13 @@
 	android:title="@string/advanced_settings">
 
             <PreferenceScreen
+                android:key="halo"
+                android:icon="@drawable/ic_halo"
+                android:fragment="com.android.settings.paranoid.Halo"
+                android:title="@string/halo_settings_title"
+                android:summary="@string/halo_settings_summary" /> 
+
+            <PreferenceScreen
                 android:id="@+id/slim_notification_shortcuts"
                 android:icon="@drawable/ic_rb_notification_shortcuts"
                 android:fragment="com.android.settings.slim.notificationshortcuts.NotificationShortcuts"
@@ -122,13 +129,6 @@
                 android:title="@string/screen_security_category"
                 android:summary="@string/screen_security_summary">
                 <extra android:name="cm_security" android:value="true" />
-
-            <PreferenceScreen
-                android:key="halo"
-                android:icon="@drawable/ic_halo"
-                android:fragment="com.android.settings.paranoid.Halo"
-                android:title="@string/halo_settings_title"
-                android:summary="@string/halo_settings_summary" /> 
 
          </PreferenceScreen>
 
