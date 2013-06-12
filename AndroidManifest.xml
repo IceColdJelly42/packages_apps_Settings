@@ -1612,8 +1612,6 @@
                 android:resource="@id/profiles_settings" />
         </activity-alias>
 
-        <!-- CyanogenMod activities Start -->
-
         <activity android:name=".profiles.ProfileConfig" />
 
         <activity android:name=".profiles.AppGroupList" />
@@ -1656,6 +1654,9 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/slim_notification_shortcuts" />
         </activity>
+
+        <activity android:name=".profiles.ProfilesAppPicker" android:label="@string/select_application"
+                android:theme="@*android:style/Theme.Holo.Dialog" />
 
         <activity android:name="net.margaritov.preference.colorpicker" />
 
