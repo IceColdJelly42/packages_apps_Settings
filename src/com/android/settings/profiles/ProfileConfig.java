@@ -120,12 +120,10 @@ public class ProfileConfig extends SettingsPreferenceFragment
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        if (deviceSupportsNfc(getActivity())) {
-            MenuItem nfc = menu.add(0, MENU_NFC_WRITE, 0, R.string.profile_write_nfc_tag)
+        MenuItem nfc = menu.add(0, MENU_NFC_WRITE, 0, R.string.profile_write_nfc_tag)
                 .setIcon(R.drawable.ic_menu_nfc_writer_dark);
-            nfc.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
-                    MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-        }
+        nfc.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
+                MenuItem.SHOW_AS_ACTION_WITH_TEXT);
         MenuItem wifi = menu.add(0, MENU_WIFI, 0, R.string.profile_trigger_wifi)
                 .setIcon(R.drawable.ic_location);
         wifi.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
