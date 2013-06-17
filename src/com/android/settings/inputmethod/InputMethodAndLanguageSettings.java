@@ -215,13 +215,15 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
         }
 
         mKeyboardRotationToggle = (CheckBoxPreference) findPreference(KEYBOARD_ROTATION_TOGGLE);
-        mKeyboardRotationToggle.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.KEYBOARD_ROTATION_TIMEOUT, 0) > 0);
+        if(mKeyboardRotationToggle != null) {
+            mKeyboardRotationToggle.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.KEYBOARD_ROTATION_TIMEOUT, 0) > 0);
 
-        mKeyboardRotationTimeout = (ListPreference) findPreference(KEYBOARD_ROTATION_TIMEOUT);
-        mKeyboardRotationTimeout.setOnPreferenceChangeListener(this);
-        updateRotationTimeout(Settings.System.getInt(getActivity()
+            mKeyboardRotationTimeout = (ListPreference) findPreference(KEYBOARD_ROTATION_TIMEOUT);
+            mKeyboardRotationTimeout.setOnPreferenceChangeListener(this);
+            updateRotationTimeout(Settings.System.getInt(getActivity()
                     .getContentResolver(), Settings.System.KEYBOARD_ROTATION_TIMEOUT, KEYBOARD_ROTATION_TIMEOUT_DEFAULT));
+        }
 
         mHandler = new Handler();
         mSettingsObserver = new SettingsObserver(mHandler, getActivity());
