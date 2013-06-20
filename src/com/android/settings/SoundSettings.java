@@ -55,6 +55,7 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.view.VolumePanel;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -101,6 +102,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_NOTIFICATIONS = "power_notifications";
     private static final String KEY_POWER_NOTIFICATIONS_VIBRATE = "power_notifications_vibrate";
     private static final String KEY_POWER_NOTIFICATIONS_RINGTONE = "power_notifications_ringtone";
+    private static final String KEY_VOLUME_OVERLAY = "volume_overlay";
 
     private static final String[] NEED_VOICE_CAPABILITY = {
             KEY_RINGTONE, KEY_DTMF_TONE, KEY_CATEGORY_CALLS,
@@ -137,6 +139,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mVolumeAdjustSounds;
     private CheckBoxPreference mSwapVolumeButtons;
     private CheckBoxPreference mLockVolumeKeys;
+    private ListPreference mVolumeOverlay;
 
     private Runnable mRingtoneLookupRunnable;
 
@@ -278,7 +281,14 @@ public class SoundSettings extends SettingsPreferenceFragment implements
 
         mLockVolumeKeys = (CheckBoxPreference) findPreference(KEY_LOCK_VOLUME_KEYS);
         mLockVolumeKeys.setChecked(Settings.System.getInt(resolver,
-                Settings.System.LOCK_VOLUME_KEYS, 0) != 0); 
+                Settings.System.LOCK_VOLUME_KEYS, 0) != 0);
+
+        mVolumeOverlay = (ListPreference) findPreference(KEY_VOLUME_OVERLAY);
+        mVolumeOverlay.setOnPreferenceChangeListener(this);
+        int volumeOverlay = Settings.System.getInt(getContentResolver(),
+                Settings.System.MODE_VOLUME_OVERLAY, VolumePanel.VOLUME_OVERLAY_EXPANDABLE);
+        mVolumeOverlay.setValue(Integer.toString(volumeOverlay));
+        mVolumeOverlay.setSummary(mVolumeOverlay.getEntry());
 
         Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         if (vibrator == null || !vibrator.hasVibrator()) {
@@ -582,6 +592,13 @@ public class SoundSettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist emergency tone setting", e);
             }
+        } else if (preference == mVolumeOverlay) {
+            int value = Integer.valueOf((String) objValue);
+            int index = mVolumeOverlay.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.MODE_VOLUME_OVERLAY, value);
+            mVolumeOverlay.setSummary(mVolumeOverlay.getEntries()[index]);
+            return true;
         }
 
         return true;
