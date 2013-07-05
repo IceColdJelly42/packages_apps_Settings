@@ -4702,6 +4702,8 @@
     <!-- USB Mass Storage -->
     <string name="usb_mass_storage_title">Mass storage</string>
     <string name="usb_mass_storage_summary">Enable USB mass storage</string>
+    <string name="storage_rescan_media">Rescan media for the storage volume</string>
+    <string name="storage_rescan_media_complete">Scan completed</string>
 
     <!-- Swap volume buttons when the screen is rotated by 90 or 180 degrees -->
     <string name="swap_volume_buttons_title">Swap volume buttons</string>
