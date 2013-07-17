@@ -5138,7 +5138,7 @@
     <string name="halo_size_summary">Defines how big HALO is going to be</string>
     <string name="halo_size_miniscule">Miniscule</string>
     <string name="halo_size_small">Small</string>
-    <string name="halo_size_default">@string/pie_mode_default</string>
+    <string name="halo_size_default">Default size</string>
     <string name="halo_size_large">Large</string>
     <string name="halo_size_gigantic">Gigantic</string>
     <string name="halo_size_monster">Monster</string>
